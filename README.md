@@ -31,6 +31,14 @@ $ mvn spring-boot:run
 
 Sentinel will be available at `localhost:8080`
 
+## Postman
+
+If you want to make your life easier, you should import Postman environment file that is `resources` folder and you will be able to test all end points on Postman interface.
+
+![postman collection](https://i.imgur.com/i4a541L.png)
+
+Here's a tutorial from [Postman](https://www.getpostman.com/docs/v6/postman/collection_runs/using_environments_in_collection_runs) website for help you when trying to do this.
+
 ## Endpoints
 
 **`GET -> /api/v0.1/mutant`**
