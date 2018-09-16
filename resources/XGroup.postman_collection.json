@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "43ad8bd5-19ae-496d-a6b6-955d2a493330",
+		"name": "XGroup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Mutant",
+			"item": [
+				{
+					"name": "Bring all data from mutants and humans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{rootUrl}}/api/v0.1/mutant",
+							"host": [
+								"{{rootUrl}}"
+							],
+							"path": [
+								"api",
+								"v0.1",
+								"mutant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mutant DNA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"dna\":[\"ATGCGA\",\"CAGTGC\",\"TTATGT\",\"AGAAGG\",\"CCCCTA\",\"TCACTG\"] \n}"
+						},
+						"url": {
+							"raw": "{{rootUrl}}/api/v0.1/mutant",
+							"host": [
+								"{{rootUrl}}"
+							],
+							"path": [
+								"api",
+								"v0.1",
+								"mutant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Human DNA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"dna\":[\"ATGCGA\",\"CAGTGC\",\"TTATTT\",\"AGACGG\",\"GCGTCA\",\"TCACTG\"] \n}"
+						},
+						"url": {
+							"raw": "{{rootUrl}}/api/v0.1/mutant",
+							"host": [
+								"{{rootUrl}}"
+							],
+							"path": [
+								"api",
+								"v0.1",
+								"mutant"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stats",
+			"item": [
+				{
+					"name": "Show stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{rootUrl}}/api/v0.1/stats",
+							"host": [
+								"{{rootUrl}}"
+							],
+							"path": [
+								"api",
+								"v0.1",
+								"stats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
