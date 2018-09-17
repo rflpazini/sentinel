@@ -28,7 +28,8 @@ public class MutantService {
             return checkExistentMutant.getType() == 1 ? true : false;
         }
 
-        String[][] dnaSequence = convertDnaListToArray(mutant.getDna());
+        String[] dnaArray = convertDnaListToArray(mutant.getDna());
+        String[][] dnaSequence = convertDnaArrayTo2DArray(dnaArray);
         int  mutantStatus = searchMutantGenes(dnaSequence) ? 1 : 0;
         mutant.setType(mutantStatus);
 
@@ -49,7 +50,7 @@ public class MutantService {
         return registry;
     }
 
-    private Mutant checkIfDnaWasStoredOnDb(Mutant mutant) {
+    public Mutant checkIfDnaWasStoredOnDb(Mutant mutant) {
         Mutant newMutant =  mutantRepository.findMutantByDna(
                 mutant.getDna().stream()
                 .collect(Collectors.joining(","))
@@ -61,15 +62,15 @@ public class MutantService {
         return null;
     }
 
-    private String[][] convertDnaListToArray(List<String> dna) {
+    public String[] convertDnaListToArray(List<String> dna) {
         int rowSize = dna.size();
         String[] dnaArray = new String[rowSize];
         dnaArray = dna.toArray(dnaArray);
 
-        return convertDnaArrayTo2DArray(dnaArray);
+        return dnaArray;
     }
 
-    private String[][] convertDnaArrayTo2DArray(String[] dnaArray) {
+    public String[][] convertDnaArrayTo2DArray(String[] dnaArray) {
         int n = dnaArray.length;
         String[][] dnaSequence = new String[n][n];
 
@@ -83,7 +84,7 @@ public class MutantService {
         return dnaSequence;
     }
 
-    private boolean searchMutantGenes(String[][] dnaSequence) {
+    public boolean searchMutantGenes(String[][] dnaSequence) {
         int maxX = dnaSequence[0].length;
         int maxY = dnaSequence.length;
         int count = 0;

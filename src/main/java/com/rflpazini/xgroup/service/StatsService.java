@@ -40,7 +40,7 @@ public class StatsService {
         return statsAdapter;
     }
 
-    private double calculateRatio(Long mutants, Long humans) {
+    public double calculateRatio(Long mutants, Long humans) {
         if (humans == 0) {
             return 0;
         }
