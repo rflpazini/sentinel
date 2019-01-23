@@ -1,44 +1,44 @@
 package com.rflpazini.xgroup.adapter;
 
 public class MutantAdapter {
-    private Long id;
+  private Long id;
 
-    private int type;
+  private int type;
 
-    private String[] dna;
+  private String[] dna;
 
-    private String dnaJson;
+  private String dnaJson;
 
-    public Long getId() {
-        return id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public MutantAdapter setId(Long id) {
-        this.id = id;
-        return this;
-    }
+  public MutantAdapter setId(Long id) {
+    this.id = id;
+    return this;
+  }
 
-    public int getType() {
-        return type;
-    }
+  public int getType() {
+    return type;
+  }
 
-    public void setType(int type) {
-        this.type = type;
-    }
+  public void setType(int type) {
+    this.type = type;
+  }
 
-    public String[] getDna() {
-        return dna;
-    }
+  public String[] getDna() {
+    return dna;
+  }
 
-    public void setDna(String[] dna) {
-        this.dna = dna;
-    }
+  public void setDna(String[] dna) {
+    this.dna = dna;
+  }
 
-    public String getDnaJson() {
-        return dnaJson;
-    }
+  public String getDnaJson() {
+    return dnaJson;
+  }
 
-    public void setDnaJson(String dnaJson) {
-        this.dnaJson = dnaJson;
-    }
+  public void setDnaJson(String dnaJson) {
+    this.dnaJson = dnaJson;
+  }
 }
