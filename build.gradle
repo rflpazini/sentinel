@@ -31,13 +31,25 @@ googleJavaFormat {
 }
 
 task installGitHooks(type: Copy) {
-    from new File(rootProject.rootDir, 'scripts/pre-commit')
-    into { new File(rootProject.rootDir, '.git/hooks') }
-    fileMode 0777
+    into (rootProject.rootDir)
 
-    from new File(rootProject.rootDir, 'scripts/post-commit')
-    into { new File(rootProject.rootDir, '.git/hooks') }
-    fileMode 0777
+    into (new File('.git/hooks')) {
+        from(rootProject.rootDir, 'scripts/')
+        include('pre-commit.sh')
+        rename { String fileName ->
+            fileName.replace("pre-commit.sh", "pre-commit")
+        }
+        fileMode 0777
+    }
+    
+    into (new File('.git/hooks')) {
+        from(rootProject.rootDir, 'scripts/')
+        include('post-commit.sh')
+        rename { String fileName ->
+            fileName.replace("post-commit.sh", "post-commit")
+        }
+        fileMode 0777
+    }
 }
 
 group = 'com.rflpazini'
